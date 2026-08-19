@@ -11,14 +11,31 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import { siteConfig } from "@/config/site";
+
 type ContactMenuProps = {
   placement?: "header" | "hero";
 };
 
 const contactItems = [
-  { key: "wechat", label: "微信（手机号）", value: "15226655044", icon: MessageCircle },
-  { key: "phone", label: "电话", value: "15226655044", icon: Phone },
-  { key: "email", label: "邮箱", value: "15226655044@163.com", icon: Mail },
+  {
+    key: "wechat",
+    label: "微信（手机号）",
+    value: siteConfig.contact.wechat,
+    icon: MessageCircle,
+  },
+  {
+    key: "phone",
+    label: "电话",
+    value: siteConfig.contact.phone,
+    icon: Phone,
+  },
+  {
+    key: "email",
+    label: "邮箱",
+    value: siteConfig.contact.email,
+    icon: Mail,
+  },
 ];
 
 export function ContactMenu({ placement = "header" }: ContactMenuProps) {

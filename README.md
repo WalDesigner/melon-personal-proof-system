@@ -31,6 +31,29 @@ npm run dev
 ```bash
 npm run lint
 npm run build
+PORT=3100 npm run start
+```
+
+## 发布准备
+
+仓库已提供 CloudBase Run 所需的 standalone 构建与多阶段容器配置：
+
+- `next.config.js` 启用 `output: "standalone"`；
+- `Dockerfile` 使用非 root 用户运行正式产物；
+- `.dockerignore` 与 `.cloudbaseignore` 排除本地职业底稿、研究资料、环境文件、
+  旧模板素材、依赖和构建产物；
+- `cloudbaserc.example.json` 固定独立服务名
+  `garen-personal-portfolio`，不会覆盖企业工作台服务。
+
+实际发布前先选择 CloudBase 环境，再将示例复制为本地
+`cloudbaserc.json`；该文件默认不进入 Git。正式公开地址必须在构建阶段传入
+`NEXT_PUBLIC_SITE_URL`，否则 sitemap 与分享元数据会继续使用本地回退地址。
+
+容器发布前可以本地验证：
+
+```bash
+docker build -t garen-personal-portfolio:local .
+docker run --rm -p 3100:3000 garen-personal-portfolio:local
 ```
 
 ## 技术栈

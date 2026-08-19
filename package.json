@@ -5,28 +5,33 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
-    "start": "next start",
+    "start": "node scripts/start-standalone.mjs",
     "lint": "eslint app config/site.ts"
   },
   "dependencies": {
     "@types/three": "^0.185.1",
     "lucide-react": "^0.468.0",
-    "next": "^16.0.10",
+    "next": "16.2.12",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "three": "^0.185.1"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^16.0.6",
+    "@next/eslint-plugin-next": "16.2.12",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.0.6",
+    "eslint-config-next": "16.2.12",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "prettier": "^3.4.2",
     "prettier-plugin-organize-imports": "^4.1.0",
     "typescript": "^5"
+  },
+  "overrides": {
+    "nanoid": "3.3.18",
+    "postcss": "8.5.25",
+    "sharp": "0.35.3"
   }
 }

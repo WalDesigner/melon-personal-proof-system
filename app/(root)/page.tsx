@@ -66,7 +66,7 @@ const experiences = [
     proof: "技术实现基础 · 企业项目协作 · 验收交付意识",
   },
   {
-    period: "2025.04 — 2026.04",
+    period: "2025 — 2026",
     company: "独立项目合作",
     role: "软件与电子信息方向",
     summary:
@@ -74,7 +74,7 @@ const experiences = [
     proof: "主动获取项目 · 需求澄清 · 资源协调与结果负责",
   },
   {
-    period: "2026.04 — 2026.07",
+    period: "2026 · 三个月左右",
     company: "启知道集团｜科创空间",
     role: "企业级软件高级销售",
     summary:
@@ -319,10 +319,16 @@ export default function HomePage() {
             </p>
           </div>
           <div className="contact-actions">
-            <a className="button button-primary" href="mailto:15226655044@163.com">
+            <a
+              className="button button-primary"
+              href={`mailto:${siteConfig.contact.email}`}
+            >
               <Mail size={17} />发送邮件
             </a>
-            <a className="button button-secondary" href="tel:15226655044">
+            <a
+              className="button button-secondary"
+              href={`tel:${siteConfig.contact.phone}`}
+            >
               <Phone size={17} />电话联系
             </a>
           </div>

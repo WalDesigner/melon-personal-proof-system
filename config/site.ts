@@ -7,6 +7,11 @@ export const siteConfig = {
   description:
     "连接业务需求、客户沟通、产品原型、技术实现与项目交付，把企业问题转化为可演示、可推进、可交付的人工智能解决方案。",
   url: siteUrl,
+  contact: {
+    phone: "15226655044",
+    email: "15226655044@163.com",
+    wechat: "15226655044",
+  },
   links: {
     github: "https://github.com/WalDesigner",
     studioChina:

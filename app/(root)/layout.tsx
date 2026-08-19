@@ -1,6 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
+import { siteConfig } from "@/config/site";
+
 import { ContactMenu } from "./contact-menu";
 import { InteractiveEffects } from "./interactive-effects";
 
@@ -66,13 +68,13 @@ export default function PortfolioLayout({
                 <span>直接联系我</span>
                 <i aria-hidden="true" />
               </div>
-              <a href="mailto:15226655044@163.com">
+              <a href={`mailto:${siteConfig.contact.email}`}>
                 <span>发送邮件</span><ArrowUpRight size={17} />
               </a>
-              <a href="tel:15226655044">
+              <a href={`tel:${siteConfig.contact.phone}`}>
                 <span>电话沟通</span><ArrowUpRight size={17} />
               </a>
-              <a href="https://github.com/WalDesigner" target="_blank" rel="noreferrer">
+              <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
                 <span>查看代码主页</span><ArrowUpRight size={17} />
               </a>
             </div>
