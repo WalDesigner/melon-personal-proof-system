@@ -51,6 +51,12 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 
 部署时仅上传 `out/` 目录，避免将本地职业底稿、环境文件或源代码传到公网。
 
+### 已上线
+
+- 国内公开站点：[嘉伦 · Melon](https://enterprise-ai-studi-d1bhe40a167e-1444381545.tcloudbaseapp.com/)；
+- 核心案例页：[企业人工智能解决方案工作台](https://enterprise-ai-studi-d1bhe40a167e-1444381545.tcloudbaseapp.com/studio/)；
+- 已在 2026-08-19 完成公网首页、案例直达页与浏览器交互验证。
+
 ## 技术栈
 
 - Next.js 16
