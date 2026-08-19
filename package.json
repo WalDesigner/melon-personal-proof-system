@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
-    "start": "node scripts/start-standalone.mjs",
+    "build": "next build --webpack && node scripts/prune-static-export.mjs",
+    "preview": "npx serve out",
     "lint": "eslint app config/site.ts"
   },
   "dependencies": {

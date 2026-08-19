@@ -31,30 +31,25 @@ npm run dev
 ```bash
 npm run lint
 npm run build
-PORT=3100 npm run start
+npm run preview
 ```
 
-## 发布准备
+`npm run preview` 默认使用 3000 端口；如端口被占用，可在命令末尾补上
+`-- -l 3100`。
 
-仓库已提供 CloudBase Run 所需的 standalone 构建与多阶段容器配置：
+## 国内发布准备
 
-- `next.config.js` 启用 `output: "standalone"`；
-- `Dockerfile` 使用非 root 用户运行正式产物；
-- `.dockerignore` 与 `.cloudbaseignore` 排除本地职业底稿、研究资料、环境文件、
-  旧模板素材、依赖和构建产物；
-- `cloudbaserc.example.json` 固定独立服务名
-  `garen-personal-portfolio`，不会覆盖企业工作台服务。
+本网站不依赖服务端接口或环境密钥，正式发布采用 CloudBase 静态托管：
 
-实际发布前先选择 CloudBase 环境，再将示例复制为本地
-`cloudbaserc.json`；该文件默认不进入 Git。正式公开地址必须在构建阶段传入
-`NEXT_PUBLIC_SITE_URL`，否则 sitemap 与分享元数据会继续使用本地回退地址。
-
-容器发布前可以本地验证：
+- `next.config.js` 启用静态导出，构建产物位于 `out/`；
+- 静态托管不创建容器实例，不与企业 AI 工作台争夺 Cloud Run 免费资源点，也没有冷启动；
+- 正式构建时传入公开站点域名，以便 sitemap 与分享元数据使用正确地址：
 
 ```bash
-docker build -t garen-personal-portfolio:local .
-docker run --rm -p 3100:3000 garen-personal-portfolio:local
+NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 ```
+
+部署时仅上传 `out/` 目录，避免将本地职业底稿、环境文件或源代码传到公网。
 
 ## 技术栈
 

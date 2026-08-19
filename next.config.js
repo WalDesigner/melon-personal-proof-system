@@ -1,29 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "standalone",
+  // This site has no server-side API or secret. Exporting static files keeps the
+  // interview site independent from Cloud Run compute quotas and cold starts.
+  output: "export",
+  trailingSlash: true,
   allowedDevOrigins: ["127.0.0.1"],
-  async redirects() {
-    const legacyPages = [
-      "/projects/:path*",
-      "/experience/:path*",
-      "/contributions/:path*",
-      "/skills/:path*",
-      "/blogs/:path*",
-      "/community/:path*",
-      "/contact/:path*",
-      "/resume/:path*",
-      "/profile-img.jpg",
-      "/logo.png",
-      "/next.svg",
-      "/vercel.svg",
-    ];
-
-    return legacyPages.map((source) => ({
-      source,
-      destination: "/",
-      permanent: false,
-    }));
-  },
 };
 
 module.exports = nextConfig;
