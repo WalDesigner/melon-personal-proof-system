@@ -53,8 +53,8 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 
 ### 已上线
 
-- 国内公开站点：[嘉伦 · Melon](https://enterprise-ai-studi-d1bhe40a167e-1444381545.tcloudbaseapp.com/)；
-- 核心案例页：[企业人工智能解决方案工作台](https://enterprise-ai-studi-d1bhe40a167e-1444381545.tcloudbaseapp.com/studio/)；
+- 国内公开站点：[嘉伦 · Melon](https://2645-static-enterprise-ai-studi-d1bhe40a167e-1444381545.cos.ap-shanghai.myqcloud.com/index.html)；
+- 核心案例页：[企业人工智能解决方案工作台](https://2645-static-enterprise-ai-studi-d1bhe40a167e-1444381545.cos.ap-shanghai.myqcloud.com/studio/index.html)；
 - 已在 2026-08-19 完成公网首页、案例直达页与浏览器交互验证。
 
 ## 技术栈

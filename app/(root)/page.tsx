@@ -112,7 +112,7 @@ export default function HomePage() {
               让一个模糊机会逐步变成可演示、可判断、可推进的解决方案。
             </p>
             <div className="hero-actions-v2">
-              <Link className="button button-primary" href="/#studio">
+              <Link className="button button-primary" href="/index.html#studio">
                 查看我独立构建的作品 <ArrowRight size={17} />
               </Link>
               <ContactMenu placement="hero" />
@@ -206,7 +206,7 @@ export default function HomePage() {
                 <li><Check size={16} />借助人工智能协作完成拆解、编码、测试与持续迭代</li>
               </ul>
               <div className="project-actions">
-                <Link className="button button-light" href="/studio">
+                <Link className="button button-light" href="/studio/index.html">
                   阅读完整案例 <ArrowRight size={17} />
                 </Link>
                 <a

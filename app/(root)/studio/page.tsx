@@ -107,7 +107,7 @@ export default function StudioCasePage() {
       <section className="case-hero-v2" id="top">
         <div className="ambient-orb ambient-orb-three" aria-hidden="true" />
         <div className="shell">
-          <Link className="back-link-v2" href="/">
+          <Link className="back-link-v2" href="/index.html">
             <ArrowLeft size={16} />返回个人主页
           </Link>
           <div className="case-hero-layout">

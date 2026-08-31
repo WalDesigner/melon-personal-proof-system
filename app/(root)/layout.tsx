@@ -7,10 +7,10 @@ import { ContactMenu } from "./contact-menu";
 import { InteractiveEffects } from "./interactive-effects";
 
 const navigation = [
-  { index: "01", label: "能力", href: "/#capabilities", section: "capabilities" },
-  { index: "02", label: "核心作品", href: "/#studio", section: "studio" },
-  { index: "03", label: "经历", href: "/#experience", section: "experience" },
-  { index: "04", label: "联系", href: "/#contact", section: "contact" },
+  { index: "01", label: "能力", href: "/index.html#capabilities", section: "capabilities" },
+  { index: "02", label: "核心作品", href: "/index.html#studio", section: "studio" },
+  { index: "03", label: "经历", href: "/index.html#experience", section: "experience" },
+  { index: "04", label: "联系", href: "/index.html#contact", section: "contact" },
 ];
 
 function BrandSignal() {
@@ -31,7 +31,7 @@ export default function PortfolioLayout({
       <InteractiveEffects />
       <header className="site-header">
         <div className="shell header-inner">
-          <Link className="brand" href="/" aria-label="嘉伦个人网站首页">
+          <Link className="brand" href="/index.html" aria-label="嘉伦个人网站首页">
             <BrandSignal />
             <span className="brand-copy">
               <strong>嘉伦 <em>Melon</em></strong>
@@ -83,10 +83,10 @@ export default function PortfolioLayout({
             <div className="footer-bottom">
               <div className="footer-brand"><BrandSignal /><strong>嘉伦 <em>Melon</em></strong></div>
               <nav aria-label="页脚导航">
-              <Link href="/#capabilities">能力证明</Link>
-              <Link href="/#studio">核心作品</Link>
-              <Link href="/#experience">职业经历</Link>
-              <Link href="/#top">返回顶部</Link>
+              <Link href="/index.html#capabilities">能力证明</Link>
+              <Link href="/index.html#studio">核心作品</Link>
+              <Link href="/index.html#experience">职业经历</Link>
+              <Link href="/index.html#top">返回顶部</Link>
               </nav>
             <span>个人能力证明系统</span>
           </div>

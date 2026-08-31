@@ -5,15 +5,17 @@ import { siteConfig } from "@/config/site";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = siteConfig.url.replace(/\/$/, "");
+
   return [
     {
-      url: siteConfig.url,
+      url: `${baseUrl}/index.html`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: `${siteConfig.url}/studio`,
+      url: `${baseUrl}/studio/index.html`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
