@@ -33,7 +33,7 @@ const capabilities = [
     title: "理解业务与客户",
     description:
       "从企业目标、业务流程、决策角色和投入回报出发识别问题，并把复杂产品讲成客户能判断的价值。",
-    evidence: ["独立产品演示", "商务谈判与成交", "3 家企业客户"],
+    evidence: ["独立产品演示", "商务谈判与成交", "多家企业客户"],
     className: "capability-business",
   },
   {
@@ -75,10 +75,10 @@ const experiences = [
   },
   {
     period: "2026 · 三个月左右",
-    company: "启知道集团｜科创空间",
+    company: "企知道集团｜科创空间",
     role: "企业级软件高级销售",
     summary:
-      "面向有研发与创新需求的科技企业，独立完成产品演示、客户沟通、商务谈判与成交，累计成交 3 家企业客户。",
+      "面向有研发与创新需求的科技企业，独立完成产品演示、客户沟通、商务谈判与成交，推动多家企业客户完成合作。",
     proof: "客户沟通 · 价值表达 · 商务推进与成交闭环",
   },
 ];
@@ -128,7 +128,7 @@ export default function HomePage() {
         </div>
 
         <div className="shell proof-ribbon" data-reveal aria-label="关键能力证明">
-          <div><strong>3 家</strong><span>企业客户成交</span></div>
+          <div><strong>多家</strong><span>企业客户合作</span></div>
           <div><strong>25—49 万</strong><span>单笔合同金额区间</span></div>
           <div><strong>3 年以上</strong><span>技术与项目实践</span></div>
           <p>不是堆砌标签，而是用真实经历证明一条完整的推进链路。</p>
@@ -264,11 +264,12 @@ export default function HomePage() {
           <div className="discipline-layout" data-reveal>
             <div className="discipline-copy">
               <div className="operating-icon"><HeartPulse size={25} /></div>
-              <span>职业能力之外的长期证据</span>
-              <h2>复杂目标，<br />不靠一时热情。</h2>
+              <span>长期主义是我的底层习惯</span>
+              <h2>长期主义，<br />比短期热情更可靠。</h2>
               <p>
-                曾从 180 多斤减至 140 斤以下，并长期保持训练。真正有价值的不是一次变化，
-                而是我在过程中形成的目标拆解、过程反馈和持续执行能力。
+                我把长期主义当作做事方式：面对复杂目标，先拆解路径，再稳定执行、
+                复盘和调整。体重管理只是一个生活侧证据——曾从 180 多斤减至
+                140 斤以下，并长期保持训练节奏。
               </p>
               <div className="discipline-methods" aria-label="长期执行方法">
                 {[
@@ -292,8 +293,8 @@ export default function HomePage() {
 
             <div className="discipline-gallery" id="discipline-photos" aria-label="本人长期体重管理生活记录">
               <div className="discipline-gallery-heading">
-                <span>真实生活记录</span>
-                <strong>前后状态对照</strong>
+                <span>生活侧证据</span>
+                <strong>长期保持的状态变化</strong>
               </div>
               <div className="discipline-photo-pair">
                 <figure className="discipline-photo discipline-photo-before">
@@ -320,7 +321,7 @@ export default function HomePage() {
                 </figure>
               </div>
               <p className="discipline-gallery-note">
-                这组记录不强调瞬间结果，而强调把目标拆成动作、持续复盘并稳定保持。
+                对我来说，长期主义不是口号，而是把目标变成每日动作、把结果沉淀成稳定习惯。
               </p>
             </div>
           </div>

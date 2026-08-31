@@ -1608,7 +1608,7 @@ p {
 }
 
 .operating-section {
-  padding: 104px 0;
+  padding: 82px 0;
   background: linear-gradient(180deg, rgba(235, 232, 223, 0.58), rgba(255, 255, 255, 0.28));
 }
 
@@ -1616,32 +1616,32 @@ p {
   display: grid;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 34px;
+  border-radius: 30px;
   background:
     radial-gradient(circle at 5% 10%, rgba(217, 138, 77, 0.13), transparent 30%),
     rgba(255, 253, 248, 0.82);
   box-shadow: 0 28px 80px rgba(11, 32, 52, 0.1);
-  grid-template-columns: minmax(380px, 0.82fr) minmax(520px, 1.18fr);
+  grid-template-columns: minmax(390px, 1fr) minmax(430px, 0.96fr);
 }
 
 .operating-icon {
   display: grid;
-  width: 58px;
-  height: 58px;
+  width: 50px;
+  height: 50px;
   place-items: center;
   color: #b66832;
-  border-radius: 17px;
+  border-radius: 15px;
   background: rgba(230, 150, 85, 0.15);
 }
 
 .discipline-copy {
   display: flex;
-  padding: 48px;
+  padding: 40px 44px;
   flex-direction: column;
   justify-content: center;
 }
 
-.discipline-copy .operating-icon { margin-bottom: 27px; }
+.discipline-copy .operating-icon { margin-bottom: 20px; }
 
 .discipline-copy > span {
   display: block;
@@ -1653,27 +1653,27 @@ p {
 }
 
 .discipline-copy h2 {
-  margin-bottom: 18px;
-  font-size: clamp(34px, 4vw, 48px);
+  margin-bottom: 16px;
+  font-size: clamp(32px, 3.4vw, 42px);
   letter-spacing: -0.045em;
   line-height: 1.18;
 }
 
 .discipline-copy > p {
   max-width: 510px;
-  margin-bottom: 27px;
+  margin-bottom: 22px;
   font-size: 14px;
 }
 
 .discipline-methods {
   display: grid;
-  margin-bottom: 25px;
-  gap: 9px;
+  margin-bottom: 20px;
+  gap: 8px;
 }
 
 .discipline-methods > div {
   display: grid;
-  padding: 13px 15px;
+  padding: 12px 14px;
   align-items: center;
   border: 1px solid rgba(166, 101, 51, 0.13);
   border-radius: 14px;
@@ -1723,7 +1723,7 @@ p {
 }
 
 .discipline-result strong {
-  font-size: 31px;
+  font-size: 28px;
   letter-spacing: -0.05em;
   line-height: 1;
 }
@@ -1749,13 +1749,13 @@ p {
   position: relative;
   display: grid;
   min-height: 0;
-  padding: 22px;
+  padding: 18px;
   align-content: center;
   background:
     linear-gradient(135deg, rgba(7, 17, 30, 0.98), rgba(23, 41, 58, 0.96)),
     #10263a;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  gap: 14px;
+  gap: 11px;
 }
 
 .discipline-gallery::before {
@@ -1791,7 +1791,7 @@ p {
 }
 
 .discipline-gallery-heading strong {
-  font-size: 18px;
+  font-size: 17px;
   letter-spacing: -0.03em;
 }
 
@@ -1801,7 +1801,7 @@ p {
   display: grid;
   align-items: stretch;
   grid-template-columns: 0.92fr 1.08fr;
-  gap: 12px;
+  gap: 10px;
 }
 
 .discipline-photo {
@@ -1811,8 +1811,8 @@ p {
   margin: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  aspect-ratio: 1 / 1;
   background: #071523;
   box-shadow: 0 22px 48px rgba(0, 0, 0, 0.22);
 }
@@ -1869,7 +1869,7 @@ p {
   margin: 2px 0 0;
   color: rgba(255, 255, 255, 0.68);
   font-size: 11px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 .contact-section { padding: 80px 0 118px; }
@@ -2281,8 +2281,8 @@ p {
   .studio-frame { grid-template-columns: 1fr; gap: 52px; }
   .studio-frame-copy { max-width: 720px; }
   .experience-layout { gap: 54px; }
-  .discipline-layout { grid-template-columns: minmax(330px, 0.8fr) minmax(430px, 1.2fr); }
-  .discipline-copy { padding: 38px; }
+  .discipline-layout { grid-template-columns: minmax(330px, 1fr) minmax(390px, 0.95fr); }
+  .discipline-copy { padding: 34px; }
   .case-hero-layout { gap: 44px; }
   .problem-grid-v2 { grid-template-columns: repeat(2, 1fr); }
   .interactive-flow-layout { grid-template-columns: 1fr; }
@@ -2303,8 +2303,8 @@ p {
   .experience-layout { grid-template-columns: 1fr; gap: 48px; }
   .experience-intro { position: static; max-width: 660px; }
   .discipline-layout { grid-template-columns: 1fr; }
-  .discipline-copy { padding: 48px; }
-  .discipline-gallery { padding: 18px; }
+  .discipline-copy { padding: 38px; }
+  .discipline-gallery { padding: 16px; }
   .discipline-photo-pair { grid-template-columns: 1fr 1fr; }
   .contact-card { grid-template-columns: 1fr; }
   .contact-actions { justify-content: flex-start; }
