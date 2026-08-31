@@ -291,28 +291,37 @@ export default function HomePage() {
             </div>
 
             <div className="discipline-gallery" id="discipline-photos" aria-label="本人长期体重管理生活记录">
-              <figure className="discipline-photo discipline-photo-before">
-                <Image
-                  alt="体重管理变化起点的本人生活记录"
-                  height="1280"
-                  loading="lazy"
-                  src="/images/discipline-before.jpg"
-                  unoptimized
-                  width="960"
-                />
-                <figcaption><span>变化起点</span><strong>开始建立规律</strong></figcaption>
-              </figure>
-              <figure className="discipline-photo discipline-photo-after">
-                <Image
-                  alt="长期保持训练后的本人生活记录"
-                  height="1499"
-                  loading="lazy"
-                  src="/images/discipline-after.jpg"
-                  unoptimized
-                  width="1121"
-                />
-                <figcaption><span>长期保持</span><strong>把改变变成习惯</strong></figcaption>
-              </figure>
+              <div className="discipline-gallery-heading">
+                <span>真实生活记录</span>
+                <strong>前后状态对照</strong>
+              </div>
+              <div className="discipline-photo-pair">
+                <figure className="discipline-photo discipline-photo-before">
+                  <Image
+                    alt="体重管理变化起点的本人生活记录"
+                    height="1402"
+                    loading="lazy"
+                    src="/images/discipline-before-v2.jpg"
+                    unoptimized
+                    width="1122"
+                  />
+                  <figcaption><span>起点</span><strong>从可执行节奏开始</strong></figcaption>
+                </figure>
+                <figure className="discipline-photo discipline-photo-after">
+                  <Image
+                    alt="长期保持训练后的本人生活记录"
+                    height="1402"
+                    loading="lazy"
+                    src="/images/discipline-after-v2.jpg"
+                    unoptimized
+                    width="1122"
+                  />
+                  <figcaption><span>保持</span><strong>把改变变成习惯</strong></figcaption>
+                </figure>
+              </div>
+              <p className="discipline-gallery-note">
+                这组记录不强调瞬间结果，而强调把目标拆成动作、持续复盘并稳定保持。
+              </p>
             </div>
           </div>
         </div>
