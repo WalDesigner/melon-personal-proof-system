@@ -16,7 +16,8 @@ export const siteConfig = {
     github: "https://github.com/WalDesigner",
     studioChina:
       "https://enterprise-ai-studio-282223-9-1444381545.sh.run.tcloudbase.com",
-    studioGlobal: "https://enterprise-ai-solution-studio.netlify.app",
+    studioSource:
+      "https://github.com/WalDesigner/enterprise-ai-solution-studio",
   },
   keywords: [
     "嘉伦",
