@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -162,15 +163,6 @@ export default function HomePage() {
                   <ul>
                     {item.evidence.map((evidence) => <li key={evidence}>{evidence}</li>)}
                   </ul>
-                  {item.number === "01" && (
-                    <div className="business-radar" aria-label="从客户信息形成价值共识">
-                      <span className="business-radar-goal">目标</span>
-                      <span className="business-radar-process">流程</span>
-                      <span className="business-radar-role">角色</span>
-                      <span className="business-radar-return">回报</span>
-                      <strong>价值共识</strong>
-                    </div>
-                  )}
                 </article>
               );
             })}
@@ -200,7 +192,6 @@ export default function HomePage() {
             <div className="studio-frame-copy">
               <div className="project-label-row">
                 <span>核心作品</span>
-                <span>公开演示版本</span>
                 <span>独立设计、构建与部署</span>
               </div>
               <h2>企业人工智能<br />解决方案工作台</h2>
@@ -270,22 +261,15 @@ export default function HomePage() {
 
       <section className="flow-section operating-section" id="discipline">
         <div className="shell">
-          <div className="operating-card" data-reveal data-tilt>
-            <div className="operating-icon"><HeartPulse size={25} /></div>
-            <div>
-              <span>长期执行力</span>
-              <h2>复杂目标，不靠一时热情。</h2>
+          <div className="discipline-layout" data-reveal>
+            <div className="discipline-copy">
+              <div className="operating-icon"><HeartPulse size={25} /></div>
+              <span>职业能力之外的长期证据</span>
+              <h2>复杂目标，<br />不靠一时热情。</h2>
               <p>
-                曾从 180 多斤减至 140 斤以下并长期保持训练。相比数字，我更看重这段经历形成的
-                目标拆解、过程反馈、持续执行和自我重塑能力。
+                曾从 180 多斤减至 140 斤以下，并长期保持训练。真正有价值的不是一次变化，
+                而是我在过程中形成的目标拆解、过程反馈和持续执行能力。
               </p>
-            </div>
-            <div className="transformation-evidence">
-              <div className="transformation-stage" aria-label="体重管理结果">
-                <div><span>起点</span><strong>180+</strong><small>斤</small></div>
-                <i aria-hidden="true"><ArrowRight size={18} /></i>
-                <div><span>长期保持</span><strong>140−</strong><small>斤</small></div>
-              </div>
               <div className="discipline-methods" aria-label="长期执行方法">
                 {[
                   ["01", "目标拆解", "把长期目标拆成可执行的阶段。"],
@@ -299,6 +283,36 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
+              <div className="discipline-result" aria-label="体重管理结果">
+                <div><span>变化起点</span><strong>180+</strong><small>斤</small></div>
+                <i aria-hidden="true"><ArrowRight size={18} /></i>
+                <div><span>长期保持</span><strong>140−</strong><small>斤</small></div>
+              </div>
+            </div>
+
+            <div className="discipline-gallery" id="discipline-photos" aria-label="本人长期体重管理生活记录">
+              <figure className="discipline-photo discipline-photo-before">
+                <Image
+                  alt="体重管理变化起点的本人生活记录"
+                  height="1280"
+                  loading="lazy"
+                  src="/images/discipline-before.jpg"
+                  unoptimized
+                  width="960"
+                />
+                <figcaption><span>变化起点</span><strong>开始建立规律</strong></figcaption>
+              </figure>
+              <figure className="discipline-photo discipline-photo-after">
+                <Image
+                  alt="长期保持训练后的本人生活记录"
+                  height="1499"
+                  loading="lazy"
+                  src="/images/discipline-after.jpg"
+                  unoptimized
+                  width="1121"
+                />
+                <figcaption><span>长期保持</span><strong>把改变变成习惯</strong></figcaption>
+              </figure>
             </div>
           </div>
         </div>
