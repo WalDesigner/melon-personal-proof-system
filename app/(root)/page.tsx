@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- COS static hosting uses direct file entrypoints; Next Link can create /index.html RSC requests. */
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -112,9 +112,9 @@ export default function HomePage() {
               让一个模糊机会逐步变成可演示、可判断、可推进的解决方案。
             </p>
             <div className="hero-actions-v2">
-              <Link className="button button-primary" href="/index.html#studio">
+              <a className="button button-primary" href="/index.html#studio">
                 查看我独立构建的作品 <ArrowRight size={17} />
-              </Link>
+              </a>
               <ContactMenu placement="hero" />
             </div>
             <div className="opportunity-line" aria-label="求职机会范围">
@@ -206,9 +206,9 @@ export default function HomePage() {
                 <li><Check size={16} />借助人工智能协作完成拆解、编码、测试与持续迭代</li>
               </ul>
               <div className="project-actions">
-                <Link className="button button-light" href="/studio/index.html">
+                <a className="button button-light" href="/studio/index.html">
                   阅读完整案例 <ArrowRight size={17} />
-                </Link>
+                </a>
                 <a
                   className="text-link-light"
                   href={siteConfig.links.studioChina}

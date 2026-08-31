@@ -1799,7 +1799,7 @@ p {
   position: relative;
   z-index: 1;
   display: grid;
-  align-items: stretch;
+  align-items: center;
   grid-template-columns: 0.92fr 1.08fr;
   gap: 10px;
 }
@@ -1807,6 +1807,8 @@ p {
 .discipline-photo {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100%;
   min-width: 0;
   margin: 0;
   overflow: hidden;

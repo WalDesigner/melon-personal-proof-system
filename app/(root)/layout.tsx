@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- COS static hosting uses direct file entrypoints; Next Link can create /index.html RSC requests. */
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 
@@ -31,20 +31,20 @@ export default function PortfolioLayout({
       <InteractiveEffects />
       <header className="site-header">
         <div className="shell header-inner">
-          <Link className="brand" href="/index.html" aria-label="嘉伦个人网站首页">
+          <a className="brand" href="/index.html" aria-label="嘉伦个人网站首页">
             <BrandSignal />
             <span className="brand-copy">
               <strong>嘉伦 <em>Melon</em></strong>
               <small>业务 × 方案 × 交付</small>
             </span>
-          </Link>
+          </a>
 
           <nav className="main-nav" aria-label="主导航">
             {navigation.map((item) => (
-              <Link data-nav={item.section} href={item.href} key={item.href}>
+              <a data-nav={item.section} href={item.href} key={item.href}>
                 <span>{item.index}</span>
                 <strong>{item.label}</strong>
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -83,10 +83,10 @@ export default function PortfolioLayout({
             <div className="footer-bottom">
               <div className="footer-brand"><BrandSignal /><strong>嘉伦 <em>Melon</em></strong></div>
               <nav aria-label="页脚导航">
-              <Link href="/index.html#capabilities">能力证明</Link>
-              <Link href="/index.html#studio">核心作品</Link>
-              <Link href="/index.html#experience">职业经历</Link>
-              <Link href="/index.html#top">返回顶部</Link>
+              <a href="/index.html#capabilities">能力证明</a>
+              <a href="/index.html#studio">核心作品</a>
+              <a href="/index.html#experience">职业经历</a>
+              <a href="/index.html#top">返回顶部</a>
               </nav>
             <span>个人能力证明系统</span>
           </div>
