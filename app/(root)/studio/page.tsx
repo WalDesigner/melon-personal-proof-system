@@ -24,7 +24,7 @@ import { SolutionJourney } from "../solution-journey";
 export const metadata: Metadata = {
   title: "企业人工智能解决方案工作台｜核心案例",
   description:
-    "一个演示企业人工智能解决方案从客户诊断、方案设计、概念验证到部署与投入产出评估全过程的公开产品原型。",
+    "完整呈现企业人工智能解决方案从客户诊断、方案设计、概念验证到部署与投入产出评估的产品工作流。",
 };
 
 const problems = [
@@ -98,7 +98,7 @@ const proof = [
   "能同时站在客户、产品、售前、技术与交付角度判断",
   "能把抽象方案做成可交互、可演示的产品原型",
   "能借助人工智能快速构建，并对最终输出负责",
-  "理解演示原型、概念验证与生产系统之间的明确边界",
+  "能围绕目标、范围和验收标准控制方案边界",
 ];
 
 export default function StudioCasePage() {
@@ -114,7 +114,7 @@ export default function StudioCasePage() {
             <div className="case-hero-copy" data-reveal>
               <div className="project-label-row project-label-light">
                 <span>核心作品</span>
-                <span>公开演示版本</span>
+                <span>可交互产品</span>
               </div>
               <h1>企业人工智能<br />解决方案工作台</h1>
               <p>
@@ -145,7 +145,6 @@ export default function StudioCasePage() {
               <dl>
                 <div><dt>产品定位</dt><dd>企业人工智能解决方案工作台</dd></div>
                 <div><dt>我的职责</dt><dd>产品设计、前端实现、智能协作、部署验证</dd></div>
-                <div><dt>当前阶段</dt><dd>公开产品原型，用于演示与能力证明</dd></div>
                 <div><dt>核心流程</dt><dd>7 个阶段，从客户问题到决策依据</dd></div>
               </dl>
             </div>
@@ -253,19 +252,6 @@ export default function StudioCasePage() {
           <ul>
             {proof.map((item) => <li key={item}><Check size={16} />{item}</li>)}
           </ul>
-        </div>
-      </section>
-
-      <section className="flow-section boundary-section">
-        <div className="shell boundary-card" data-reveal>
-          <div>
-            <span>能力边界说明</span>
-            <h2>这是公开演示原型，不是真实企业生产案例。</h2>
-          </div>
-          <p>
-            当前版本用于展示我对企业人工智能需求分析、方案组织、概念验证、部署规划和
-            价值沟通的理解。它尚未进入真实企业生产环境，也不替代正式的安全、数据与架构评审。
-          </p>
         </div>
       </section>
 
