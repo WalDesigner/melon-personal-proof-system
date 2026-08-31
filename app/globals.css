@@ -1702,59 +1702,39 @@ p {
   gap: 11px;
 }
 
-.transformation-gallery {
+.discipline-methods {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
-.transformation-gallery figure { margin: 0; }
-
-.fitness-placeholder {
-  position: relative;
-  display: flex;
-  height: 112px;
-  padding: 12px;
-  overflow: hidden;
-  align-items: flex-end;
-  justify-content: space-between;
-  color: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.discipline-methods > div {
+  display: grid;
+  min-height: 104px;
+  padding: 14px;
+  align-content: start;
+  border: 1px solid rgba(166, 101, 51, 0.13);
   border-radius: 15px;
-  background:
-    radial-gradient(circle at 70% 20%, rgba(255, 255, 255, 0.2), transparent 22%),
-    linear-gradient(145deg, #4a5e72, #182b3d 72%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: rgba(255, 253, 247, 0.68);
+  gap: 5px;
 }
 
-.fitness-placeholder::before,
-.fitness-placeholder::after {
-  position: absolute;
-  content: "";
-  pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 50%;
+.discipline-methods span {
+  color: #b26b36;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
-.fitness-placeholder::before { top: -22px; right: -14px; width: 78px; height: 78px; }
-.fitness-placeholder::after { top: 19px; right: 18px; width: 35px; height: 35px; }
-.fitness-placeholder-2 { background: radial-gradient(circle at 62% 22%, rgba(230, 150, 85, 0.3), transparent 26%), linear-gradient(145deg, #6d4a34, #202c38 72%); }
-.fitness-placeholder-3 { background: radial-gradient(circle at 68% 22%, rgba(54, 205, 178, 0.25), transparent 26%), linear-gradient(145deg, #2f695f, #132d3c 72%); }
-.fitness-placeholder svg,
-.fitness-placeholder span { position: relative; z-index: 1; }
-.fitness-placeholder span { font-size: 8px; font-weight: 760; letter-spacing: 0.04em; }
+.discipline-methods strong {
+  font-size: 12px;
+  letter-spacing: -0.01em;
+}
 
-.transformation-gallery figcaption {
-  padding: 6px 2px 0;
+.discipline-methods small {
   color: #765942;
   font-size: 9px;
-  font-weight: 700;
-}
-
-.placeholder-note {
-  color: #98745a;
-  font-size: 8px;
-  text-align: right;
+  line-height: 1.55;
 }
 
 .transformation-stage > div {
@@ -2340,9 +2320,8 @@ p {
   .transformation-evidence { grid-column: auto; }
   .transformation-stage { min-width: 0; justify-content: flex-start; }
   .transformation-stage > div { min-width: 96px; }
-  .transformation-gallery { gap: 6px; }
-  .fitness-placeholder { height: 118px; padding: 9px; }
-  .fitness-placeholder span { font-size: 7px; }
+  .discipline-methods { grid-template-columns: 1fr; gap: 7px; }
+  .discipline-methods > div { min-height: 0; padding: 12px 13px; }
   .operating-card h2 { font-size: 24px; }
   .contact-section { padding-bottom: 80px; }
   .contact-card { padding: 34px 26px; border-radius: 24px; }

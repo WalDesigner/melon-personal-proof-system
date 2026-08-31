@@ -84,7 +84,7 @@ const contribution = [
   {
     icon: ShieldCheck,
     title: "验证与部署",
-    text: "完成关键路径测试、构建检查与两个公开访问入口的部署验证。",
+    text: "完成关键路径测试、构建检查、国内公网部署与发布后验证。",
   },
   {
     icon: Presentation,
@@ -132,11 +132,11 @@ export default function StudioCasePage() {
                 </a>
                 <a
                   className="button button-dark-outline"
-                  href={siteConfig.links.studioGlobal}
+                  href={siteConfig.links.studioSource}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  备用访问入口 <ArrowUpRight size={17} />
+                  查看公开源码 <ArrowUpRight size={17} />
                 </a>
               </div>
             </div>

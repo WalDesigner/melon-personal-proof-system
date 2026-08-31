@@ -6,7 +6,6 @@ import {
   BriefcaseBusiness,
   Check,
   Code2,
-  Dumbbell,
   HeartPulse,
   Mail,
   MapPin,
@@ -287,22 +286,19 @@ export default function HomePage() {
                 <i aria-hidden="true"><ArrowRight size={18} /></i>
                 <div><span>长期保持</span><strong>140−</strong><small>斤</small></div>
               </div>
-              <div className="transformation-gallery" aria-label="健身照片版式占位">
+              <div className="discipline-methods" aria-label="长期执行方法">
                 {[
-                  ["变化前", "照片位 01"],
-                  ["训练中", "照片位 02"],
-                  ["长期保持", "照片位 03"],
-                ].map(([label, placeholder], index) => (
-                  <figure key={label}>
-                    <div className={`fitness-placeholder fitness-placeholder-${index + 1}`} role="img" aria-label={`${label}照片待替换`}>
-                      <Dumbbell size={18} />
-                      <span>{placeholder}</span>
-                    </div>
-                    <figcaption>{label}</figcaption>
-                  </figure>
+                  ["01", "目标拆解", "把长期目标拆成可执行的阶段。"],
+                  ["02", "过程反馈", "根据变化持续校准训练与节奏。"],
+                  ["03", "长期保持", "把一次改变沉淀成稳定习惯。"],
+                ].map(([number, title, detail]) => (
+                  <div key={number}>
+                    <span>{number}</span>
+                    <strong>{title}</strong>
+                    <small>{detail}</small>
+                  </div>
                 ))}
               </div>
-              <small className="placeholder-note">版式占位，待替换为本人真实照片</small>
             </div>
           </div>
         </div>
