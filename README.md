@@ -72,6 +72,10 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 - 长期执行力模块只引用本人真实体重管理经历，不使用占位照片或虚构证据；
 - 仓库只包含可公开的网站源代码，职业底稿、简历材料和内部设计记录保留在本地。
 
+## 当前阶段
+
+2026-09 已完成面试可用基线收口。项目默认进入稳定维护：只有公开链接故障、事实冲突、安全问题或明确的面试反馈才继续修改产品；常规工作转向作品讲解和面试准备。
+
 ## 许可与来源
 
 工程底座改编自 [namanbarkiya/minimal-next-portfolio](https://github.com/namanbarkiya/minimal-next-portfolio)，遵循 MIT License，原许可证保留在仓库中。网站的信息架构、中文内容、三维交互、首页与案例页均已按本项目重新设计。
