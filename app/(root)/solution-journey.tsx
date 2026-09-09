@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
 
 const stages = [
@@ -42,6 +42,7 @@ const stages = [
 ];
 
 export function SolutionJourney() {
+  const id = useId();
   const [active, setActive] = useState(0);
   const current = stages[active];
 
@@ -50,12 +51,26 @@ export function SolutionJourney() {
       <div className="journey-steps" role="tablist" aria-label="解决方案推进路径">
         {stages.map((stage, index) => (
           <button
+            id={`${id}-tab-${index}`}
+            aria-controls={`${id}-panel`}
             aria-selected={active === index}
+            tabIndex={active === index ? 0 : -1}
             className={active === index ? "is-active" : ""}
             key={stage.label}
             onClick={() => setActive(index)}
             onFocus={() => setActive(index)}
             onMouseEnter={() => setActive(index)}
+            onKeyDown={(event) => {
+              const next = event.key === "Home" ? 0
+                : event.key === "End" ? stages.length - 1
+                : ["ArrowRight", "ArrowDown"].includes(event.key) ? (index + 1) % stages.length
+                : ["ArrowLeft", "ArrowUp"].includes(event.key) ? (index + stages.length - 1) % stages.length
+                : null;
+              if (next === null) return;
+              event.preventDefault();
+              setActive(next);
+              document.getElementById(`${id}-tab-${next}`)?.focus();
+            }}
             role="tab"
             type="button"
           >
@@ -65,7 +80,7 @@ export function SolutionJourney() {
           </button>
         ))}
       </div>
-      <div className="journey-detail" role="tabpanel" aria-live="polite">
+      <div id={`${id}-panel`} aria-labelledby={`${id}-tab-${active}`} tabIndex={0} className="journey-detail" role="tabpanel" aria-live="polite">
         <span className="journey-kicker">当前阶段</span>
         <h3>{current.title}</h3>
         <p>{current.description}</p>
