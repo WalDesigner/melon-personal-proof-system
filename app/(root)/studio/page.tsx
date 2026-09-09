@@ -185,7 +185,7 @@ export default function StudioCasePage() {
             <span>方案推进逻辑</span>
             <h2>不是一次生成答案，<br />而是逐步减少不确定性。</h2>
             <p>
-              将鼠标移入不同步骤，可以看到每一个阶段需要做出的判断和对应产物。
+              点击不同步骤，或使用键盘方向键，可以查看每个阶段的判断和对应产物。
               这也是我理解企业方案工作的方式。
             </p>
           </div>
@@ -212,17 +212,27 @@ export default function StudioCasePage() {
         </div>
       </section>
 
-      <section className="flow-section contribution-section-v2">
+      <section className="flow-section contribution-section-v2" id="engineering">
         <div className="shell">
           <div className="section-heading-v2" data-reveal>
             <span>我具体做了什么</span>
             <div>
-              <h2>我的贡献，不只是写页面。</h2>
+              <h2>从产品流程，到可检查的实现。</h2>
               <p>
                 前端是实现手段，真正的重点是业务流程抽象、产品判断、智能协作、
                 交付边界和可讲解的方案表达。
               </p>
             </div>
+          </div>
+          <div className="case-implementation">
+            <h3>一条真实调用链，三个明确边界</h3>
+            <p>浏览器需求表单 → Next.js 服务端接口 → ModelScope → 结构化解析 → 草案与来源标识。</p>
+            <ul>
+              <li><strong>真实实现：</strong>需求分析调用模型，方案页读取最新草案；超时或解析失败时明确标注模拟兜底。</li>
+              <li><strong>状态范围：</strong>项目草案保存在当前浏览器 localStorage，不提供账号、跨设备同步或多租户隔离。</li>
+              <li><strong>设计推演：</strong>RAG、Agent、PoC、部署与 ROI 用于解释方案取舍，不代表已执行企业生产任务。</li>
+            </ul>
+            <p>部署选择：工作台需要服务端保护密钥，使用 Docker + CloudBase；个人站只展示静态内容，使用 Next.js 导出 + COS。</p>
           </div>
           <div className="contribution-grid-v2">
             {contribution.map((item) => {

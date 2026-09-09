@@ -1,14 +1,12 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- COS static hosting uses direct file entrypoints; Next Link can create /index.html RSC requests. */
-import { ArrowUpRight } from "lucide-react";
-
 import { siteConfig } from "@/config/site";
 
 import { ContactMenu } from "./contact-menu";
 import { InteractiveEffects } from "./interactive-effects";
 
 const navigation = [
-  { index: "01", label: "能力", href: "/index.html#capabilities", section: "capabilities" },
-  { index: "02", label: "核心作品", href: "/index.html#studio", section: "studio" },
+  { index: "01", label: "作品", href: "/index.html#studio", section: "studio" },
+  { index: "02", label: "能力", href: "/index.html#capabilities", section: "capabilities" },
   { index: "03", label: "经历", href: "/index.html#experience", section: "experience" },
   { index: "04", label: "联系", href: "/index.html#contact", section: "contact" },
 ];
@@ -28,6 +26,7 @@ export default function PortfolioLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className="site-frame">
+      <a className="skip-link" href="#main-content">跳转到正文</a>
       <InteractiveEffects />
       <header className="site-header">
         <div className="shell header-inner">
@@ -52,44 +51,16 @@ export default function PortfolioLayout({
         </div>
       </header>
 
-      <main>{children}</main>
+      <main id="main-content" tabIndex={-1}>{children}</main>
 
-      <footer className="site-footer" id="footer">
-        <div className="footer-aura" aria-hidden="true" />
-        <div className="shell footer-stage">
-          <div className="footer-main">
-            <div className="footer-statement">
-              <span>保持联系</span>
-              <h2>让复杂问题，<br />有一条能被推进的路径。</h2>
-              <p>面向全国的人工智能解决方案、售前与实施交付机会。</p>
-            </div>
-            <div className="footer-contact-card">
-              <div className="footer-contact-head">
-                <span>直接联系我</span>
-                <i aria-hidden="true" />
-              </div>
-              <a href={`mailto:${siteConfig.contact.email}`}>
-                <span>发送邮件</span><ArrowUpRight size={17} />
-              </a>
-              <a href={`tel:${siteConfig.contact.phone}`}>
-                <span>电话沟通</span><ArrowUpRight size={17} />
-              </a>
-              <a href={siteConfig.links.github} target="_blank" rel="noreferrer">
-                <span>查看代码主页</span><ArrowUpRight size={17} />
-              </a>
-            </div>
-          </div>
-
-            <div className="footer-bottom">
-              <div className="footer-brand"><BrandSignal /><strong>嘉伦 <em>Melon</em></strong></div>
-              <nav aria-label="页脚导航">
-              <a href="/index.html#capabilities">能力证明</a>
-              <a href="/index.html#studio">核心作品</a>
-              <a href="/index.html#experience">职业经历</a>
-              <a href="/index.html#top">返回顶部</a>
-              </nav>
-            <span>个人能力证明系统</span>
-          </div>
+      <footer className="portfolio-footer" id="footer">
+        <div className="shell">
+          <span>嘉伦 / Melon <small>业务 × 方案 × 交付</small></span>
+          <nav aria-label="页脚导航">
+            <a href="/studio/index.html">项目案例</a>
+            <a href={siteConfig.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a href="/index.html#contact">联系嘉伦</a>
+          </nav>
         </div>
       </footer>
     </div>

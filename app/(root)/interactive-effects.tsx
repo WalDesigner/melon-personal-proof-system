@@ -26,6 +26,19 @@ export function InteractiveEffects() {
       const progress = max > 0 ? window.scrollY / max : 0;
       root.style.setProperty("--page-progress", `${Math.min(progress, 1)}`);
       setShowTop(window.scrollY > window.innerHeight * 0.8);
+      // Use section positions, not observer entry batches: tall sections may
+      // never reach the old intersection thresholds, leaving a stale tab active.
+      const readingLine = Math.max(150, window.innerHeight * 0.25);
+      // A short final section cannot always reach the reading line at page end.
+      const current = max > 0 && window.scrollY >= max - 4
+        ? sectionItems.at(-1)?.dataset.section
+        : sectionItems.filter((item) => item.getBoundingClientRect().top <= readingLine).at(-1)?.dataset.section;
+      navItems.forEach((link) => {
+        const active = link.dataset.nav === current;
+        link.classList.toggle("is-active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
     };
 
     const prefersReducedMotion = window.matchMedia(
@@ -78,29 +91,15 @@ export function InteractiveEffects() {
 
     }
 
-    const sectionObserver = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (!visible) return;
-        const current = (visible.target as HTMLElement).dataset.section;
-        navItems.forEach((link) => {
-          link.classList.toggle("is-active", link.dataset.nav === current);
-        });
-      },
-      { threshold: [0.18, 0.35, 0.6], rootMargin: "-18% 0px -46%" }
-    );
-    sectionItems.forEach((item) => sectionObserver.observe(item));
-
     updateProgress();
     window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
 
     return () => {
       revealObserver?.disconnect();
-      sectionObserver.disconnect();
       cleanTilt.forEach((clean) => clean());
       window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
     };
   }, []);
 

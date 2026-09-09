@@ -9,7 +9,7 @@ import {
   MessageCircle,
   Phone,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
 import { siteConfig } from "@/config/site";
 
@@ -39,6 +39,7 @@ const contactItems = [
 ];
 
 export function ContactMenu({ placement = "header" }: ContactMenuProps) {
+  const panelId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
   const closeTimerRef = useRef<number | null>(null);
   const [open, setOpen] = useState(false);
@@ -133,6 +134,7 @@ export function ContactMenu({ placement = "header" }: ContactMenuProps) {
     >
       <button
         aria-expanded={open}
+        aria-controls={panelId}
         aria-haspopup="dialog"
         className="contact-menu-trigger"
         onFocus={() => setOpen(true)}
@@ -144,7 +146,7 @@ export function ContactMenu({ placement = "header" }: ContactMenuProps) {
         <ChevronDown size={13} aria-hidden="true" />
       </button>
 
-      <div aria-hidden={!open} aria-label="联系嘉伦" className="contact-menu-panel" role="dialog">
+      <div id={panelId} inert={!open} aria-hidden={!open} aria-label="联系嘉伦" className="contact-menu-panel" role="dialog">
         <div className="contact-menu-head">
           <div>
             <span>保持联系</span>
