@@ -42,7 +42,7 @@ npm run preview
 本网站不依赖服务端接口或环境密钥，正式发布采用 CloudBase 静态托管：
 
 - `next.config.js` 启用静态导出，构建产物位于 `out/`；
-- 静态托管不创建容器实例，不与企业 AI 工作台争夺 Cloud Run 免费资源点，也没有冷启动；
+- 静态托管不创建容器实例，没有容器冷启动；仍消耗存储、请求与流量，同环境不代表独立免费额度，以实际资源归属和账单为准；
 - 正式构建时传入公开站点域名，以便 sitemap 与分享元数据使用正确地址：
 
 ```bash
@@ -56,6 +56,8 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 - 国内公开站点：[嘉伦 · Melon](https://2645-static-enterprise-ai-studi-d1bhe40a167e-1444381545.cos.ap-shanghai.myqcloud.com/index.html)；
 - 核心案例页：[企业人工智能解决方案工作台](https://2645-static-enterprise-ai-studi-d1bhe40a167e-1444381545.cos.ap-shanghai.myqcloud.com/studio/index.html)；
 - 已在 2026-08-19 完成公网首页、案例直达页与浏览器交互验证。
+
+2026-10-30 维护检查：首页与案例页 GET 200、标题正确。站点是纯静态导出，不依赖企业工作台的容器或模型密钥；是否下载网页仍受 COS 域名响应配置和浏览器缓存影响。
 
 ## 技术栈
 
@@ -74,8 +76,9 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 
 ## 当前阶段
 
-2026-09 已有稳定展示基线。本分支包含作品优先的首页改版、移动导航和键盘交互改进，
-源码改动不代表公开站点已部署。旧三维组件保留但不再挂载首页，避免装饰交互抢占作品阅读。
+2026-09-11 作品优先的首页改版、移动导航与键盘交互改进已合入 main（`ac77059`），并完成静态文件发布记录。2026-10-30 源码未改动；维护分支将 Next.js 与配套规则升级到 16.4.3，并通过 lint 与 production build。旧三维组件保留但不再挂载首页。
+
+生产依赖审计为 0；仍有开发工具链告警，静态部署不运行 Next.js 服务端，后续按构建工具影响单独维护，不使用破坏性的强制降级修复。
 
 ## 许可与来源
 
