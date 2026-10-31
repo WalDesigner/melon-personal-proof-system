@@ -57,7 +57,7 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 - 核心案例页：[企业人工智能解决方案工作台](https://2645-static-enterprise-ai-studi-d1bhe40a167e-1444381545.cos.ap-shanghai.myqcloud.com/studio/index.html)；
 - 已在 2026-08-19 完成公网首页、案例直达页与浏览器交互验证。
 
-2026-10-30 维护检查：首页与案例页 GET 200、标题正确。站点是纯静态导出，不依赖企业工作台的容器或模型密钥；是否下载网页仍受 COS 域名响应配置和浏览器缓存影响。
+2026-10-31 维护检查：首页与案例页 GET 200、标题正确，COS 正式域名响应无 `Content-Disposition: attachment`。CloudBase `tcloudbaseapp.com` 备用别名仍带该响应头，面试官请使用上方 COS 正式链接。站点是纯静态导出，不依赖企业工作台的容器或模型密钥。
 
 ## 技术栈
 
@@ -76,7 +76,7 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 
 ## 当前阶段
 
-2026-09-11 作品优先的首页改版、移动导航与键盘交互改进已合入 main（`ac77059`），并完成静态文件发布记录。2026-10-30 源码未改动；维护分支将 Next.js 与配套规则升级到 16.4.3，并通过 lint 与 production build。旧三维组件保留但不再挂载首页。
+2026-09-11 作品优先的首页改版、移动导航与键盘交互改进已合入 main（`ac77059`），并完成静态文件发布记录。2026-10-31 源码 UI 未改；Next.js 与配套规则升级到 16.4.3，lint 与 production build 通过；50 个静态文件已上传。旧三维组件保留但不再挂载首页。
 
 生产依赖审计为 0；仍有开发工具链告警，静态部署不运行 Next.js 服务端，后续按构建工具影响单独维护，不使用破坏性的强制降级修复。
 
