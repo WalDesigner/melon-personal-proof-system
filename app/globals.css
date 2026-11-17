@@ -21,7 +21,8 @@
 /* Shared navigation and compact footer for the recruiter reading path. */
 .skip-link { position: fixed; top: -80px; left: 16px; z-index: 200; padding: 12px 20px; background: white; color: #175e54; }
 .skip-link:focus { top: 12px; }
-.portfolio-footer { padding: 24px 0; background: #f7f8f3; border-top: 1px solid #d9ded7; font-size: 12px; color: #52675b; }
+.portfolio-footer { padding: 24px 0; background: #121d2a; border-top: 1px solid #34485a; font-size: 12px; color: #b9cbdc; }
+.portfolio-footer a:hover { color: #9cebd8; text-decoration: underline; text-underline-offset: 4px; }
 .portfolio-footer > div { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .portfolio-footer small { margin-left: 14px; }
 .portfolio-footer nav { display: flex; gap: 24px; }
@@ -111,7 +112,7 @@ p {
 .site-frame {
   min-height: 100vh;
   overflow: clip;
-  background: var(--paper);
+  background: linear-gradient(#121d2a 0 150px, #f1f5f9 150px);
 }
 
 .scroll-progress {
@@ -154,11 +155,13 @@ p {
 
 .site-header {
   position: sticky;
+  display: flow-root;
   z-index: 100;
   top: 0;
   height: 88px;
   border: 0;
-  background: linear-gradient(to bottom, rgba(242, 241, 236, 0.84), rgba(242, 241, 236, 0));
+  background: transparent;
+  backdrop-filter: blur(8px);
   pointer-events: none;
 }
 
@@ -2353,7 +2356,7 @@ p {
   .brand-signal { width: 34px; height: 34px; border-radius: 11px; }
   .brand small { display: none; }
   .contact-menu-header .contact-menu-trigger { min-height: 38px; padding: 0 10px; font-size: 10px; }
-  .contact-menu-header .contact-menu-panel { width: min(316px, calc(100vw - 20px)); }
+  .contact-menu-header .contact-menu-panel { width: min(316px, calc(100vw - 44px)); }
   .hero-v2 { padding-top: 43px; }
   .hero-layout { gap: 42px; }
   .role-pill { margin-bottom: 20px; font-size: 11px; }
@@ -2457,19 +2460,25 @@ p {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 
-.contact-menu-panel { background: #142d2c; backdrop-filter: none; }
+.contact-menu-panel { background: #192c40; backdrop-filter: none; border-color: #4a6178; }
 .contact-menu-row strong { font-size: 14px; }
+.contact-profile-link { min-height: 44px; color: #eff5fa; }
+.contact-profile-link strong { cursor: pointer; }
+.contact-profile-link:focus-visible { background: #203a51; }
 .contact-menu-row small { font-size: 11px; color: #bdcec6; }
 .contact-menu-row > button { min-width: 40px; min-height: 40px; }
 .contact-menu-head strong { font-size: 13px; }
 
 /* Keep all four destinations available on touch screens. */
-.header-inner { box-shadow: 0 8px 24px rgba(27, 57, 50, .08); border-radius: 10px; background: rgba(220, 231, 220, .97); border-color: #c6d4c6; }
-.header-inner .main-nav { background: #314e46; border-color: #314e46; box-shadow: none; }
-.header-inner .main-nav a { color: #f1f5ef; }
-.header-inner .main-nav a > span { color: #b7ccc0; }
-.header-inner .main-nav a:hover, .header-inner .main-nav a.is-active { color: #173d31; background: #f1f5ec; }
-.header-inner .main-nav a:hover > span, .header-inner .main-nav a.is-active > span { color: #347360; }
+.header-inner { box-shadow: 0 8px 22px #12223825; border-radius: 10px; background: rgba(226, 235, 244, .98); border-color: #b8cadb; }
+.header-inner .brand strong em { color: #256773; }
+.header-inner .brand small { color: #4d6177; }
+.header-inner .main-nav { background: #22384e; border-color: #22384e; box-shadow: none; }
+.header-inner .main-nav a { color: #edf4fb; transition: box-shadow 160ms ease, transform 160ms ease; }
+.header-inner .main-nav a > span { color: #b3c5d6; }
+.header-inner .main-nav a:hover, .header-inner .main-nav a.is-active { color: #19354b; background: #eff6fc; }
+.header-inner .main-nav a:hover > span, .header-inner .main-nav a.is-active > span { color: #286776; }
+.header-inner .contact-menu-trigger { color: #20384b; background: #f4f8fc; border-color: #c0d0df; }
 @media (max-width: 860px) {
   .site-header { height: 122px; }
   .header-inner { display: grid; height: auto; grid-template-columns: 1fr auto; gap: 8px; padding: 9px 12px; }

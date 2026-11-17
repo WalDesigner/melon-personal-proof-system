@@ -228,7 +228,7 @@ export default function StudioCasePage() {
             <h3>一条真实调用链，三个明确边界</h3>
             <p>浏览器需求表单 → Next.js 服务端接口 → ModelScope → 结构化解析 → 草案与来源标识。</p>
             <ul>
-              <li><strong>真实实现：</strong>需求分析调用模型，方案页读取最新草案；超时或解析失败时明确标注模拟兜底。</li>
+              <li><strong>真实实现：</strong>需求分析调用模型，仅在真实生成成功后保存新草案。调用或解析失败时明确提示，不自动替换为模拟结果。</li>
               <li><strong>状态范围：</strong>项目草案保存在当前浏览器 localStorage，不提供账号、跨设备同步或多租户隔离。</li>
               <li><strong>设计推演：</strong>RAG、Agent、PoC、部署与 ROI 用于解释方案取舍，不代表已执行企业生产任务。</li>
             </ul>

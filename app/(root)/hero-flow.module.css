@@ -1,0 +1,19 @@
+.flow { margin-top: 14px; }
+.graph { position: relative; border-radius: 7px; background: radial-gradient(ellipse at 65% 43%, #23575362, transparent 80%); }
+.graph svg { width: 100%; height: auto; display: block; }
+.grid { mask-image: radial-gradient(ellipse 76% 92% at 58% 62%, #000 38%, transparent 100%); }
+.guide { stroke: #83bfb5; stroke-opacity: .34; stroke-dasharray: 2 5; }
+.track, .arrow, .trail { stroke-width: 2.5px; stroke-linecap: round; stroke-linejoin: round; }
+.arrow { stroke: #93ecd0; }
+.trail { stroke: #b8ffec; stroke-width: 3.1px; opacity: .9; filter: drop-shadow(0 0 4px #87eec2ab); }
+.ring { fill: #a5eed6; fill-opacity: .12; stroke: #86dfc4; stroke-opacity: .36; }
+.node { fill: #1b3938; stroke: #b1eedb; stroke-width: 2; }
+.pulse { stroke: #a7f4da; stroke-width: 2; }
+.steps { position: absolute; inset: 0; padding: 0; margin: 0; list-style: none; pointer-events: none; }
+.steps li { position: absolute; left: var(--x); top: var(--y); transform: translate(-50%, calc(-100% - 8px)); display: flex; align-items: center; gap: 4px; border: 1px solid #577989; border-radius: 5px; padding: 3px 6px; background: #203645; color: #edf7f7; white-space: nowrap; font-size: 11px; font-weight: 650; line-height: 1.2; }
+.steps li span { font-family: ui-monospace, monospace; color: #b0cec8; line-height: 1; font-size: 8px; }
+.toggle { display: flex; align-items: center; gap: 5px; padding: 3px 6px; margin: 0 0 0 auto; min-height: 26px; color: #bad7cf; border: 1px solid transparent; border-radius: 4px; background: transparent; font-size: 11px; }
+.toggle:hover, .toggle:focus-visible { background: #93dcc717; border-color: #64877d; color: #e1fff5; }
+@media (pointer: coarse) { .toggle { min-height: 44px; } }
+@media (max-width: 360px) { .steps li span { display: none; } }
+@media (prefers-reduced-motion: reduce) { .motion, .toggle { display: none; } }

@@ -9,7 +9,7 @@
 - 作品优先：先呈现职业定位、核心项目与可核验实现，再展示工作方式和经历；
 - 旗舰案例：用“企业人工智能解决方案工作台”展示需求诊断、方案设计、概念验证、部署规划和投入产出判断；
 - 经历到证据：把前端开发、企业项目交付和企业级软件销售转化为岗位价值；
-- 稳定联系入口：悬浮预览、点击固定、滚动保持，支持复制微信、电话、邮箱并尝试唤起微信；
+- 配置过的电话和邮箱可在顶部「联系我」浮层与页尾显示，页尾始终提供 GitHub，不展示微信；
 - 响应式与无障碍：支持键盘操作、清晰焦点状态和减少动态效果设置。
 
 ## 页面
@@ -57,7 +57,17 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 - 核心案例页：[企业人工智能解决方案工作台](https://2645-static-enterprise-ai-studi-d1bhe40a167e-1444381545.cos.ap-shanghai.myqcloud.com/studio/index.html)；
 - 已在 2026-08-19 完成公网首页、案例直达页与浏览器交互验证。
 
-2026-10-31 维护检查：首页与案例页 GET 200、标题正确，COS 正式域名响应无 `Content-Disposition: attachment`。CloudBase `tcloudbaseapp.com` 备用别名仍带该响应头，面试官请使用上方 COS 正式链接。站点是纯静态导出，不依赖企业工作台的容器或模型密钥。
+2026-11-18 页尾联系版已在原 CloudBase/COS 发布，57 个文件公网回读一致。默认网址仍可能以附件形式返回 HTML，公网文件一致不等于浏览器入口限制已解决。本站是纯静态导出，不依赖工作台容器或模型密钥。见 [版本记录](RELEASE_GATE.md)。
+
+### 公开源码与生产内容
+
+此分支公开交互实现，不内置个人电话、邮箱、体重数字和相册照片；它不是线上静态包。默认构建仍可浏览首页和案例，联系方式回退为作品档案，不生成空拨号、空邮件或失效照片链接。
+
+- `NEXT_PUBLIC_PORTFOLIO_PHONE`、`NEXT_PUBLIC_PORTFOLIO_EMAIL`：可选，分别启用顶部和页尾对应的联系项。
+- `NEXT_PUBLIC_PORTFOLIO_WEIGHT_START`、`NEXT_PUBLIC_PORTFOLIO_WEIGHT_CURRENT`：可选，均设置后才显示阶段数字。
+- 相册媒体放在本地忽略目录 `public/images/discipline-story/`，准备好 `photo-gallery.tsx` 定义的 WebP 大图和缩略图后，才设置 `NEXT_PUBLIC_PORTFOLIO_GALLERY=1`。
+
+这些值会出现在构建后的网页，不是秘密变量。不要填入凭据，也不要把包含个人资料的源码配置、媒体或构建产物推送到公开仓库。
 
 ## 技术栈
 
@@ -76,9 +86,7 @@ NEXT_PUBLIC_SITE_URL=https://your-public-domain.example npm run build
 
 ## 当前阶段
 
-2026-09-11 作品优先的首页改版、移动导航与键盘交互改进已合入 main（`ac77059`），并完成静态文件发布记录。2026-10-31 源码 UI 未改；Next.js 与配套规则升级到 16.4.3，lint 与 production build 通过；50 个静态文件已上传。旧三维组件保留但不再挂载首页。
-
-生产依赖审计为 0；仍有开发工具链告警，静态部署不运行 Next.js 服务端，后续按构建工具影响单独维护，不使用破坏性的强制降级修复。
+2026-11-18：页尾联系版完成，保留黑蓝首屏、吸顶导航、相册和案例路径。站点仍为静态托管；构建依赖版本本轮未变，依赖维护与功能发布分开。
 
 ## 许可与来源
 
